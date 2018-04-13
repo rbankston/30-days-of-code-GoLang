@@ -12,14 +12,13 @@ func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 
 	var numbers []string
-	var n int
 
 	for scanner.Scan() {
 		numbers = append(numbers, scanner.Text())
 	}
 
 	n64, _ := strconv.ParseUint(numbers[0], 10, 64)
-	n = int(n64)
+	n := int(n64)
 
 	if InBetween(n, 2, 5) && n%2 == 0 {
 		fmt.Println("Not Weird")
